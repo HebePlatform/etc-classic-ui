@@ -47,6 +47,7 @@ const CHAIN_GRAPH_URLS = {
   1: 'https://gateway.thegraph.com/api/{apiKey}/subgraphs/id/Ec6fVMDVqXTDQZ3c4jxcyV3zBXqkdgMWfhdtCgtqn7Sh',
   10: 'https://gateway.thegraph.com/api/{apiKey}/subgraphs/id/GvkbnEVhLD6KArXpEzLFtSKRmspBW29ApKFqR5FjuP2P',
   56: 'https://gateway.thegraph.com/api/{apiKey}/subgraphs/id/CiwGzefDBZCavXRPnwarnnF8xDDoLw4boBuySomJWYnV',
+  61: 'https://graph.torndao.com/subgraphs/name/tornadocash/etc-tornado-subgraph',
   100: 'https://gateway.thegraph.com/api/{apiKey}/subgraphs/id/F1m8vxuGatCBRvP8fPnnWUJ1oK7kfE1DGdRacqoamLjF',
   137: 'https://gateway.thegraph.com/api/{apiKey}/subgraphs/id/HUMgwMYNrPQpnBJgesFXyy5u6jSiJ6u5nNWQng9ayCmD',
   42161: 'https://gateway.thegraph.com/api/{apiKey}/subgraphs/id/8x8o6XFAqYZmiPwrJ51UxGTaZLYyW1fFtghvsEy7a1KJ',

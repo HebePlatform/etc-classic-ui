@@ -1,5 +1,5 @@
 export const blockSyncInterval = 10000
-export const enabledChains = ['1', '10', '56', '100', '137', '42161', '43114', '11155111']
+export const enabledChains = ['1', '10', '56', '61', '100', '137', '42161', '43114', '11155111']
 export default {
   netId1: {
     rpcCallRetryAttempt: 15,
@@ -203,6 +203,72 @@ export default {
       ENCRYPTED_NOTES_BLOCK: 8159269
     },
     'tornado-proxy-light.contract.tornadocash.eth': '0x0D5550d52428E7e3175bfc9550207e4ad3859b17'
+  },
+  netId61: {
+    rpcCallRetryAttempt: 15,
+    gasPrices: {
+      instant: 1,
+      fast: 1,
+      standard: 1,
+      low: 1
+    },
+    nativeCurrency: 'etc',
+    currencyName: 'ETC',
+    explorerUrl: {
+      tx: 'https://etc.blockscout.com/tx/',
+      address: 'https://etc.blockscout.com/address/',
+      block: 'https://etc.blockscout.com/block/'
+    },
+    merkleTreeHeight: 20,
+    emptyElement: '21663839004416932945382355908790599225266501822907911457504978515578255421292',
+    networkName: 'Ethereum Classic',
+    deployedBlock: 22385618,
+    multicall: '0xA52EE88C0F24EF8b96C3989cAb42cfC6008041A8',
+    echoContractAccount: '0x6e824e64C2B30Eb542b9917AA2FbEA593daEA5D6',
+    rpcUrls: {
+      rivet: {
+        name: 'rivet',
+        url: 'https://etc.rivet.link'
+      },
+      etcdesktop: {
+        name: 'etcdesktop',
+        url: 'https://etc.etcdesktop.com'
+      },
+      mytokenpocket: {
+        name: 'mytokenpocket',
+        url: 'https://etc.mytokenpocket.vip'
+      },
+      xrpc: {
+        name: '0xrpc',
+        url: 'https://0xrpc.io/etc'
+      },
+      geth: {
+        name: 'geth',
+        url: 'https://geth-at.etc-network.info'
+      },
+      besu: {
+        name: 'besu',
+        url: 'https://besu-at.etc-network.info'
+      }
+    },
+    tokens: {
+      etc: {
+        instanceAddress: {
+          '1': '0x2f56d5aFC058B8734350B162EFEe75ee48f034e0',
+          '10': '0x59fCB629A23e8eD0a60A0188771E221042260118',
+          '100': '0x784B3a7a7981B959bd8d9D9e73c2013BE819Fbf2'
+        },
+        symbol: 'ETC',
+        decimals: 18
+      }
+    },
+    ensSubdomainKey: 'etc-tornado',
+    pollInterval: 10,
+    constants: {
+      NOTE_ACCOUNT_BLOCK: 22385618,
+      ENCRYPTED_NOTES_BLOCK: 22385618
+    },
+    'tornado-proxy-light.contract.tornadocash.eth': '0xac97AB4fBd872ea762974CbBB0Ee72351afe16F3'
   },
   netId137: {
     rpcCallRetryAttempt: 15,
