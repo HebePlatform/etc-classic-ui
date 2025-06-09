@@ -21,6 +21,8 @@ function getRelayerValidateFunction(netId) {
   switch (netId) {
     case 56:
       return ajv.getSchema('bscRelayer')
+    case 61:
+      return ajv.getSchema('etcRelayer')
     case 100:
       return ajv.getSchema('xdaiRelayer')
     case 137:

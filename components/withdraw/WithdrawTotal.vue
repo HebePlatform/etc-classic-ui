@@ -26,6 +26,10 @@
         {{ $t('relayerFee') }}
         <span data-test="label_relayer_fee">{{ toDecimals(relayerFee, null, 6) }} {{ currency }}</span>
       </div>
+      <div v-if="currency === 'ETC'" class="withdraw-data-item">
+        {{ $t('poolFee') }}
+        <span data-test="label_relayer_fee">{{ toDecimals(poolFee, null, 6) }} {{ currency }}</span>
+      </div>
       <div v-if="withdrawType === 'relayer'" class="withdraw-data-item">
         {{ $t('totalFee') }}
         <span data-test="label_total_fee">{{ toDecimals(totalRelayerFee, null, 6) }} {{ currency }}</span>
@@ -79,6 +83,16 @@ export default {
     ...mapGetters('fees', ['gasPriceInGwei']),
     ...mapGetters('token', ['toDecimals', 'fromDecimals']),
     ...mapGetters('price', ['tokenRate']),
+    poolFee() {
+      const { amount } = this.selectedStatistic
+      const total = toBN(this.fromDecimals(amount.toString()))
+      const fee = 0.03
+      const decimalsPoint = decimalPlaces(fee)
+      const roundDecimal = 10 ** decimalsPoint
+      const aroundFee = toBN(parseInt(fee * roundDecimal, 10))
+      const tornadoServiceFee = total.mul(toBN(aroundFee)).div(toBN(roundDecimal * 100))
+      return tornadoServiceFee
+    },
     relayerFee() {
       const { amount } = this.selectedStatistic
       const total = toBN(this.fromDecimals(amount.toString()))
@@ -95,7 +109,12 @@ export default {
       const { decimals } = this.networkConfig.tokens[currency]
       const ethFee = this.withdrawalNetworkFee
       if (currency === this.nativeCurrency) {
-        return ethFee.add(tornadoServiceFee)
+        if (currency === 'etc') {
+          const poolServiceFee = this.poolFee
+          return ethFee.add(poolServiceFee).add(tornadoServiceFee)
+        } else {
+          return ethFee.add(tornadoServiceFee)
+        }
       }
       const tokenFee = ethFee.mul(toBN(10 ** decimals)).div(toBN(this.tokenRate))
       return tokenFee.add(tornadoServiceFee)
@@ -119,14 +138,15 @@ export default {
       return fromWei(this.ethToReceive)
     },
     total() {
-      const { amount } = this.selectedStatistic
+      const { amount, currency } = this.selectedStatistic
       let total = toBN(this.fromDecimals(amount.toString()))
-
       if (this.withdrawType === 'relayer') {
-        const relayerFee = this.withdrawalFeeViaRelayer
-        total = total.sub(relayerFee)
+        const totalRelayerFee = this.totalRelayerFee
+        total = total.sub(totalRelayerFee)
+      } else if (currency === 'etc') {
+        const poolFee = this.poolFee
+        total = total.sub(poolFee)
       }
-
       return this.toDecimals(total, null, 6)
     }
   }

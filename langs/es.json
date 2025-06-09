@@ -124,6 +124,7 @@
   "userDeposit": "sin depósitos | solamente 1 depósito | {n} depósitos",
   "gasPrice": "Precio de Gas",
   "totalFee": "Comisión total",
+  "poolFee": "tarifa del pool",
   "networkFee": "Comisión de red",
   "connectYourWalletFirst": "Conecte su monedero primero",
   "changeNetwork": "Cambiar red",

@@ -124,6 +124,7 @@
   "userDeposit": "Yükleme yok | Sadece bir yükleme | {n} yüklemeler",
   "gasPrice": "Gas Ücreti",
   "totalFee": "Toplam ücret",
+  "poolFee": "havuz ücreti",
   "networkFee": "Ağ ücreti",
   "connectYourWalletFirst": "Önce cüzdanınızı bağlayın",
   "changeNetwork": "Ağ değiştir",

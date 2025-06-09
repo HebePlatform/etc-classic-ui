@@ -124,6 +124,7 @@
   "userDeposit": "no deposits | only 1 deposit | {n} deposits",
   "gasPrice": "Gas Price",
   "totalFee": "Total fee",
+  "poolFee": "Pool fee",
   "networkFee": "Network fee",
   "connectYourWalletFirst": "Connect your wallet first",
   "changeNetwork": "Change network",

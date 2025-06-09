@@ -124,6 +124,7 @@
   "userDeposit": "депозиты отсутствуют | 1 депозит | {n} депозита | {n} депозитов",
   "gasPrice": "Цена Газа",
   "totalFee": "Итоговая комиссия",
+  "poolFee": "лата за пул",
   "networkFee": "Комиссия сети",
   "connectYourWalletFirst": "Подключите свой кошелек",
   "changeNetwork": "Сменить сеть",

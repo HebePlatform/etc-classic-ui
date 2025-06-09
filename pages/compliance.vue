@@ -114,9 +114,14 @@
           <div class="block block-withdrawal">
             <h3 class="block-item block-item--title">
               {{ $t('withdrawal') }}
-              <span>{{
+              <span v-if="txDepositInfo.currency !== 'etc'">{{
                 txWithdrawalInfo.amount
                   ? `${$n(txWithdrawalInfo.amount)} ${getSymbol(txDepositInfo.currency)}`
+                  : '-'
+              }}</span>
+              <span v-if="txDepositInfo.currency === 'etc'">{{
+                txWithdrawalInfo.amount
+                  ? `${$n(txWithdrawalInfo.amount * 0.997)} ${getSymbol(txDepositInfo.currency)}`
                   : '-'
               }}</span>
             </h3>
@@ -135,7 +140,14 @@
                     : $t('status')
                   : $t('noteHasNotBeenSpent')
               }}
-              <span class="fee">{{
+              <span v-if="txDepositInfo.currency === 'etc'" class="fee">{{
+                txWithdrawalInfo.fee
+                  ? `${$t('poolFee')} ${$n(txWithdrawalInfo.amount * 0.003)}
+                ${getSymbol(txDepositInfo.currency)},
+                ${$t('relayerFee')} ${$n(txWithdrawalInfo.fee)} ${getSymbol(txDepositInfo.currency)}`
+                  : $t('relayerFee')
+              }}</span>
+              <span v-if="txDepositInfo.currency !== 'etc'" class="fee">{{
                 txWithdrawalInfo.fee
                   ? `${$t('relayerFee')} ${$n(txWithdrawalInfo.fee)} ${getSymbol(txDepositInfo.currency)}`
                   : $t('relayerFee')

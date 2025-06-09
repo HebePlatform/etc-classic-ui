@@ -124,6 +124,7 @@
   "userDeposit": "aucun dépôt | seulement 1 dépôt | {n} dépôts",
   "gasPrice": "Prix du gas",
   "totalFee": "Frais total",
+  "poolFee": "frais de pool",
   "networkFee": "Frais de réseau",
   "connectYourWalletFirst": "Connecter d'abord votre portefeuille",
   "changeNetwork": "Changer de réseau",

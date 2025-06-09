@@ -124,6 +124,7 @@
   "userDeposit": "无存款 | 只有 1 笔存款 | {n} 笔存款",
   "gasPrice": "Gas 价格",
   "totalFee": "总费用",
+  "poolFee": "池费用",
   "networkFee": "网络费",
   "connectYourWalletFirst": "首先连接你的钱包",
   "changeNetwork": "切换网络",
